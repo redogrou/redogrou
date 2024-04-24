@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../public/css/login.css">
+   
+  
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome 5 -->
+    <link href="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></link>
+    <!-- Bootstrap Switch Button -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"
+        rel="stylesheet">
+    <style>
+        /* Custom CSS for adjusting card body height and width */
+        .card-body {
+            height: 300px; /* Adjust the height as needed */
+            width: 100%; /* Adjust the width as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid vh-100" style="border: 2px solid black; background: #F6F9FF;">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+
+                <div class="container" style="width:700px; background: #FFFFFF; margin-top:250px;;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 style="text-align: center; color:#2A3976">EMPMS-Admin</h2>
+                            <form action="/login" onsubmit="return validateForm()" method="post">
+                                <div class="heading" style="text-align: center;">
+                                  <h3 style="color: #184275;">Login to your Account</h3>
+                                  <p>Enter your username & password to login</p>
+
+                                </div>
+                                <div class="form-container">
+                                    <label for="uname">Username</label>
+                                    <input type="text" placeholder="Enter Username" name="username" required>
+
+                                    <label for="psw">Password</label>
+                                    <input type="password" placeholder="Enter Password" name="password" required maxlength="8">
+                                    
+                                    <label>
+                                    <input type="checkbox"  name="remember"> Remember me </label>
+
+                                    <button type="submit">Login</button>
+
+                                    <p>Don't have an account? <a href="/register " target=" ">Create an Account.. </a></p>
+                                   
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+            <!-- <script>
+                function validateform(){  
+                    var name=document.myform.name.value;  
+                    var password=document.myform.password.value;  
+  
+                if (name==null || name==""){  
+                        alert("Name can't be blank");  
+                        return false;  
+                        }else if(password.length<8){  
+                        alert("Password must be at least 8 characters long.");  
+                        return false;  
+                    }  
+                }
+            </script> -->
+            <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+      <script>
+      // JavaScript code in your login.html file
+        document.querySelector('form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const username = document.querySelector('input[name="username"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+                
+            });
+            if (response.ok) {
+                // Redirect to dashboard if login is successful
+                window.location.href = '/dashboard';
+            } else if (response.status === 401) {
+                // Display alert message for invalid username or password
+                alert('Invalid username or password. Please try again or create an account.');
+            } else {
+                // Handle other errors (optional)
+                alert('An error occurred. Please try again later.');
+            }
+        });
+        </script>      
+  
+
+</body>
+
+    
+
+</html>

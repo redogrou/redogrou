@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="../public/css/style1.css">
+    <link rel="stylesheet" href="../public/css/style3.css">
+    <link rel="stylesheet" href="../public/css/style4.css">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+
+<body class="sb-nav-fixed mt-2">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark sb-sidenav-dark" style="background-color: #1C4E80;">
+
+        <a class="navbar-brand" href="/">EMPMS</a>
+
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+
+        </form>
+
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="color: white;"><i class="fas fa-user fa-fw"
+                        style="color: white;"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="/login">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav" style="">
+            <nav class="sb-sidenav accordion sb-sidenav-dark " id="sidenavAccordion" style="background-color: #1C4E80;">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading" style="color: white;">Core</div>
+                        <a class="nav-link" href="/dashboard" style="color: white;">
+                            <div class="sb-nav-link-icon" style="color: white;"><i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            Dashboard
+                        </a>
+                        <!-- 
+                        <div class="sb-sidenav-menu-heading" style="color: white;">Document</div>
+                        <a class="nav-link collapsed" href="#" style="color: white;" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon" style="color: white;"><i style="color: white;"
+                                    class="fas fa-columns"></i></div>
+                            Create Document
+                            <div class="sb-sidenav-collapse-arrow" style="color: white;"><i class="fas fa-angle-down"
+                                    style="color: white;"></i></div>
+                        </a> -->
+                        <!-- <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion" style="color: white;">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="./Createclient.html" style="color: white;">Writ Petition</a>
+                                <a class="nav-link" href="Create-case.html" style="color: white;">User Master</a>
+                                <a class="nav-link" href="#" style="color: white;">Employee Master</a>
+                            </nav>
+                        </div> -->
+
+
+
+
+                        <div class="sb-sidenav-menu-heading" style="color: white;">Masters</div>
+                        <a class="nav-link collapsed" href="#" style="color: white;" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon" style="color: white;"><i style="color: white;"
+                                    class="fas fa-columns"></i></div>
+                            Masters
+                            <div class="sb-sidenav-collapse-arrow" style="color: white;"><i class="fas fa-angle-down"
+                                    style="color: white;"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion" style="color: white;">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/createEmployee" style="color: white;">Create Employee</a>
+                                <!-- <a class="nav-link" href="Create-case.html" style="color: white;">User Master</a>
+                                <a class="nav-link" href="#" style="color: white;">Employee Master</a> -->
+                            </nav>
+                        </div>
+
+
+
+                        <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                            aria-expanded="false" aria-controls="collapsePages" style="color: white;">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open" style="color: white;"></i></div>
+                            Pages
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"
+                                    style="color: white;"></i></div>
+                        </a> -->
+                        <!-- <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseAuth" aria-expanded="false"
+                                    aria-controls="pagesCollapseAuth" style="color: white;">
+                                    Authentication
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a style="color: white;" class="nav-link" href="./loginpage.html">Login</a>
+                                        <a style="color: white;" class="nav-link"
+                                            href="./Registerpage.html">Register</a>
+                                        <a style="color: white;" class="nav-link" href="./forgetpass.html">Forgot
+                                            Password</a>
+                                    </nav>
+                                </div>
+
+                            </nav>
+                        </div> -->
+                        <div class="sb-sidenav-menu-heading" style="color: white;">HELP</div>
+                        <a class="nav-link" href="#" style="color: white;">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area" style="color: white;"></i></div>
+                            Get Call Back
+                        </a>
+                        <a class="nav-link" href="/contact" style="color: white;">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table" style="color: white;"></i></div>
+                            Chat with us
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Update the sidebar footer to include a placeholder for the username -->
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as: <span id="loggedInUser"></span></div>
+                </div>
+                </nav>
+        </div>
+
+
+
+
+        <div id="layoutSidenav_content">
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-10">
+                        <div class=" container-fluid mt-1"
+                            style="background-color: white; height:100vh; border-radius: 5px;">
+
+                            <div class="row md-2">
+                                <div class="col-md-12">
+                                    <span>
+                                        <h3 style="text-align: center;" id="todaysDate"></h3>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" style="text-align: center;">
+                                    <hr style="border: 20px solid #8a8a8a; border-radius: 5px;">
+                                    <span
+                                        style="font-family: Arial, sans-serif; color: #434D69; padding: 5px; position: relative; top: -50px;">Today's
+                                        Birthdays
+                                    </span>
+
+                                </div>
+                            </div>
+
+                            <!-- 1st column -->
+                            <!-- Today's Birthdays -->
+                            <div class="row">
+                                <div class="table-responsive table-sm">
+                                    <table class="table_tr1" id="todayBirthdaysTable">
+                                        <tr>
+                                            <th><i class="fa-solid fa-cake-candles fa-xl mr-2"></i></th>
+                                            <th>Employee Name</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 2nd column -->
+                            <div class="row">
+                                <div class="col-md-12" style="text-align: center;">
+                                    <hr style="border: 20px solid #8a8a8a; border-radius: 5px;">
+                                    <span
+                                        style="font-family: Arial, sans-serif; color: #434D69; padding: 5px; position: relative; top: -50px;">Tomarrows's
+                                        Birthdays
+                                    </span>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="table-responsive table-sm">
+                                    <table class="table_tr2" id="tomorrowBirthdaysTable">
+                                        <tr>
+                                            <th><i class="fa-solid fa-cake-candles fa-xl mr-2"></i></th>
+                                            <th>Employee Name</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 3rd column -->
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div style="text-align: center;">
+                                        <hr style="border: 20px solid #434D69; border-radius: 5px;">
+                                        <span
+                                            style="font-family: Arial, sans-serif; color: #434D69; padding: 5px; position: relative; top: -50px;">Day
+                                            After Tommorrow Event</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="table-responsive table-sm ">
+
+                                    <table class="table_tr3" id="dayAfterTomorrowBirthdaysTable">
+                                        <tr>
+                                            <th><i class="fa-solid fa-cake-candles fa-xl mr-2"></i></th>
+                                            <th>Employee Name</th>
+                                        </tr>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- <div id="layoutlSidenav"> -->
+
+                    <div class="col-md-2">
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                            aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+
+                                <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+
+                            </div>
+                            <div class="offcanvas-body">
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; www.Redogroup.in</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/script1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Fetch data for today, tomorrow, and the day after tomorrow
+        fetchAndPopulateTable();
+        function fetchAndPopulateTable() {
+    fetch('/api/today-birthdays')
+        .then(response => response.json())
+        .then(data => {
+            populateTable(data, 'todayBirthdaysTable');
+        })
+        .catch(error => console.error('Error fetching today\'s birthdays:', error));
+}
+
+function populateTable(data, tableId) {
+    var table = document.getElementById(tableId);
+    if (data.length > 0) {
+        data.forEach(employee => {
+            document.getElementById('todayBirthdaysTable').innerHTML += `<tr><td><a href="#" onclick="fetchEmployeeDetails(${employee.empId})" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-cake-candles fa-xl" style="margin-right: 18px;"></i></a></td><td>${employee.empname}</td></tr>`;
+        });
+    } else {
+        table.innerHTML = '<tr><td colspan="2">No birthdays</td></tr>';
+    }
+}
+
+        
+
+        // Fetch data for tomorrow's birthdays
+        fetch('/api/tomorrows-birthdays')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        data.forEach(employee => {
+                            document.getElementById('tomorrowBirthdaysTable').innerHTML += `<tr><td><a href="#" onclick="fetchEmployeeDetails(${employee.empId})" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-cake-candles fa-xl" style="margin-right: 18px;"></i></a></td><td>${employee.empname}</td></tr>`;
+                        });
+                    } else {
+                        document.getElementById('tomorrowBirthdaysTable').innerHTML = '<tr><td colspan="2">No birthdays</td></tr>';
+                    }
+                })
+                .catch(error => console.error('Error fetching tomorrow\'s birthdays:', error));
+
+        // Fetch data for the day after tomorrow's birthdays
+        fetch('/api/day-after-tomorrows-birthdays')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    data.forEach(employee => {
+                        document.getElementById('dayAfterTomorrowBirthdaysTable').innerHTML += `<tr><td><a href="" onclick="fetchEmployeeDetails(${employee.empId})" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"> <i class="fa-solid fa-cake-candles fa-xl"
+                        style="margin-right: 18px;" id="sidebarlToggle" href="#!"></i></a></td><td>${employee.empname}</td></tr>`;
+                    });
+                } else {
+                    document.getElementById('dayAfterTomorrowBirthdaysTable').innerHTML = '<tr><td colspan="2">No birthdays</td></tr>';
+                }
+            })
+            .catch(error => console.error('Error fetching day after tomorrow\'s birthdays:', error));
+
+           
+            
+
+function fetchEmployeeDetails(empId) {
+    fetch(`/api/employee/${empId}`)
+        .then(response => response.json())
+        .then(employee => {
+            const offcanvasBody = document.querySelector('.offcanvas-body');
+            offcanvasBody.innerHTML = `
+                <h5>${employee.empname}</h5>
+                <p>Banchcode: ${employee.branchcode}</p>
+                <p>Branchname: ${employee.branchname}</p>
+                <p>IndexNumber: ${employee.indexnum}</p>
+                <p>Sincedate: ${employee.sincedate}</p>
+                <p>Subgroup: ${employee.subgroup}</p>
+                <p>MobileNo: ${employee.monum}</p>
+                <p>EmailId: ${employee.emailid}</p>
+                <p>Appointdate: ${employee.appointdate}</p>
+                <p>EGSince: ${employee.egince}</p>
+                <p>ESGSince: ${employee.esgince}</p>
+                <p>DateofBirth: ${employee.dob}</p>
+            `;
+        })
+        .catch(error => console.error('Error fetching employee details:', error));
+}
+
+window.addEventListener('DOMContentLoaded', event => {
+
+// Toggle the side navigation
+const sidebarToggle = document.body.querySelector('#sidebarToggle');
+if (sidebarToggle) {
+    // Uncomment Below to persist sidebar toggle between refreshes
+    // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+    //     document.body.classList.toggle('sb-sidenav-toggled');
+    // }
+    sidebarToggle.addEventListener('click', event => {
+        event.preventDefault();
+        document.body.classList.toggle('sb-sidenav-toggled');
+        localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+    });
+}
+
+});
+
+
+// if (window.location.href.includes('/dashboard')) {
+//             // Display an alert indicating successful login
+//             alert('You are logged in successfully!');
+//         }
+        // Function to get the value of a query parameter from the URL
+        fetch('/api/get-username')
+        .then(response => response.json())
+        .then(data => {
+            // Update the content of the span element with the id "loggedInUser" with the username
+            document.getElementById('loggedInUser').textContent = data.username;
+        })
+        .catch(error => console.error('Error fetching username:', error));
+    </script>
+
+
+
+</body>
+
+</html>
